@@ -1,5 +1,5 @@
 {
-  "name": "Lionel Winter WonderlandTrain Controller",
+  "name": "Lionel Winter Wonderland Train Controller",
   "hacs": "1.32.0",
   "domains": [
     "number",
