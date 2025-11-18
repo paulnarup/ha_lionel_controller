@@ -53,7 +53,7 @@ SOUND_SOURCE_ENGINE = 0x04
 
 # Volume and pitch ranges
 VOLUME_MIN = 0
-VOLUME_MAX = 7
+VOLUME_MAX = 10
 PITCH_MIN = -2
 PITCH_MAX = 2
 

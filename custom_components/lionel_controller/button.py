@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import asyncio
 
 from homeassistant.components.button import ButtonEntity
 from homeassistant.config_entries import ConfigEntry
@@ -27,6 +28,8 @@ async def async_setup_entry(
     buttons = [
         LionelTrainDisconnectButton(coordinator, name),
         LionelTrainStopButton(coordinator, name),
+        LionelTrainHornButton(coordinator, name),
+        LionelTrainBellButton(coordinator, name),
         LionelTrainForwardButton(coordinator, name),
         LionelTrainReverseButton(coordinator, name),
     ]
@@ -143,3 +146,44 @@ class LionelTrainAnnouncementButton(LionelTrainButtonBase):
         announcement_config = ANNOUNCEMENTS[self._announcement_name]
         announcement_code = announcement_config["code"]
         await self._coordinator.async_play_announcement(announcement_code)
+
+
+class LionelTrainHornButton(LionelTrainButtonBase):
+    """Button for briefly sounding the horn."""
+
+    _attr_name = "Horn"
+    _attr_icon = "mdi:bullhorn"
+
+    def __init__(self, coordinator: LionelTrainCoordinator, device_name: str) -> None:
+        """Initialize the horn button."""
+        super().__init__(coordinator, device_name)
+        self._attr_unique_id = f"{coordinator.mac_address}_horn_button"
+
+    async def async_press(self) -> None:
+        """Press the button: sound horn briefly (1s)."""
+        try:
+            await self._coordinator.async_set_horn(True)
+            await asyncio.sleep(1.0)
+        finally:
+            # Ensure horn is turned off even if sleep is interrupted
+            await self._coordinator.async_set_horn(False)
+
+
+class LionelTrainBellButton(LionelTrainButtonBase):
+    """Button for briefly ringing the bell."""
+
+    _attr_name = "Bell"
+    _attr_icon = "mdi:bell"
+
+    def __init__(self, coordinator: LionelTrainCoordinator, device_name: str) -> None:
+        """Initialize the bell button."""
+        super().__init__(coordinator, device_name)
+        self._attr_unique_id = f"{coordinator.mac_address}_bell_button"
+
+    async def async_press(self) -> None:
+        """Press the button: ring bell briefly (1s)."""
+        try:
+            await self._coordinator.async_set_bell(True)
+            await asyncio.sleep(1.0)
+        finally:
+            await self._coordinator.async_set_bell(False)
