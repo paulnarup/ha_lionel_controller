@@ -21,11 +21,11 @@ A Home Assistant custom integration for controlling Lionel LionChief Bluetooth l
 
 ### Number Entities
 - **Throttle**: Variable speed control slider from 0-100%
-- **Master Volume**: Overall volume control (0-10)
-- **Horn Volume**: Horn sound volume (0-10)
-- **Bell Volume**: Bell sound volume (0-10)
-- **Speech Volume**: Announcement volume (0-10)
-- **Engine Volume**: Engine sound volume (0-10)
+- **Master Volume**: Overall volume control (0-7)
+- **Horn Volume**: Horn sound volume (0-7)
+- **Bell Volume**: Bell sound volume (0-7)
+- **Speech Volume**: Announcement volume (0-7)
+- **Engine Volume**: Engine sound volume (0-7)
 
 ### Switch Entities  
 - **Lights**: Control locomotive lighting (defaults to on)
