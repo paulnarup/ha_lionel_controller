@@ -195,27 +195,27 @@ class LionelTrainCoordinator:
     # Advanced feature properties
     @property
     def master_volume(self) -> int:
-        """Return master volume (0-7)."""
+        """Return master volume (0-10)."""
         return self._master_volume
 
     @property
     def horn_volume(self) -> int:
-        """Return horn volume (0-7)."""
+        """Return horn volume (0-10)."""
         return self._horn_volume
 
     @property
     def bell_volume(self) -> int:
-        """Return bell volume (0-7)."""
+        """Return bell volume (0-10)."""
         return self._bell_volume
 
     @property
     def speech_volume(self) -> int:
-        """Return speech volume (0-7)."""
+        """Return speech volume (0-10)."""
         return self._speech_volume
 
     @property
     def engine_volume(self) -> int:
-        """Return engine volume (0-7)."""
+        """Return engine volume (0-10)."""
         return self._engine_volume
 
     @property
@@ -679,10 +679,10 @@ class LionelTrainCoordinator:
 
     # Advanced feature control methods
     async def async_set_master_volume(self, volume: int) -> bool:
-        """Set master volume (0-7)."""
-        if not 0 <= volume <= 7:
-            raise ValueError("Volume must be between 0 and 7")
-        
+        """Set master volume (0-10)."""
+        if not 0 <= volume <= 10:
+            raise ValueError("Volume must be between 0 and 10")
+
         command = build_simple_command(CMD_MASTER_VOLUME, [volume])
         success = await self.async_send_command(command)
         if success:
@@ -692,8 +692,8 @@ class LionelTrainCoordinator:
 
     async def async_set_sound_volume(self, sound_source: int, volume: int, pitch: int = None) -> bool:
         """Set volume and optionally pitch for specific sound source."""
-        if not 0 <= volume <= 7:
-            raise ValueError("Volume must be between 0 and 7")
+        if not 0 <= volume <= 10:
+            raise ValueError("Volume must be between 0 and 10")
         if pitch is not None and not -2 <= pitch <= 2:
             raise ValueError("Pitch must be between -2 and 2")
         

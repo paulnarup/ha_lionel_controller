@@ -21,11 +21,11 @@ A Home Assistant custom integration for controlling Lionel LionChief Bluetooth l
 
 ### Number Entities
 - **Throttle**: Variable speed control slider from 0-100%
-- **Master Volume**: Overall volume control (0-7)
-- **Horn Volume**: Horn sound volume (0-7)
-- **Bell Volume**: Bell sound volume (0-7)
-- **Speech Volume**: Announcement volume (0-7)
-- **Engine Volume**: Engine sound volume (0-7)
+- **Master Volume**: Overall volume control (0-10)
+- **Horn Volume**: Horn sound volume (0-10)
+- **Bell Volume**: Bell sound volume (0-10)
+- **Speech Volume**: Announcement volume (0-10)
+- **Engine Volume**: Engine sound volume (0-10)
 
 ### Switch Entities  
 - **Lights**: Control locomotive lighting (defaults to on)
@@ -38,8 +38,12 @@ A Home Assistant custom integration for controlling Lionel LionChief Bluetooth l
 - **Reverse**: Set locomotive direction to reverse
 - **Disconnect**: Disconnect from locomotive
 - **Announcements**: Various conductor announcements
-  - Random, Ready to Roll, Hey There, Squeaky
-  - Water and Fire, Fastest Freight, Penna Flyer
+  - Random
+  - All Aboard
+  - Full Steam Ahead
+  - Winter Wonderland Express
+- **Horn**: Brief horn press (button) in addition to the Horn switch (toggle)
+- **Bell**: Brief bell ring (button) in addition to the Bell switch (toggle)
 
 ### Binary Sensor
 - **Connection**: Shows Bluetooth connection status

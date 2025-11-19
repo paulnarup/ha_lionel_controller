@@ -87,7 +87,7 @@ class LionelTrainMasterVolume(NumberEntity):
     _attr_icon = "mdi:volume-high"
     _attr_mode = NumberMode.SLIDER
     _attr_native_min_value = 0
-    _attr_native_max_value = 7
+    _attr_native_max_value = 10
     _attr_native_step = 1
 
     def __init__(self, coordinator: LionelTrainCoordinator, name: str) -> None:
@@ -124,7 +124,7 @@ class LionelTrainHornVolume(NumberEntity):
     _attr_icon = "mdi:bullhorn"
     _attr_mode = NumberMode.SLIDER
     _attr_native_min_value = 0
-    _attr_native_max_value = 7
+    _attr_native_max_value = 10
     _attr_native_step = 1
 
     def __init__(self, coordinator: LionelTrainCoordinator, name: str) -> None:
@@ -162,7 +162,7 @@ class LionelTrainBellVolume(NumberEntity):
     _attr_icon = "mdi:bell"
     _attr_mode = NumberMode.SLIDER
     _attr_native_min_value = 0
-    _attr_native_max_value = 7
+    _attr_native_max_value = 10
     _attr_native_step = 1
 
     def __init__(self, coordinator: LionelTrainCoordinator, name: str) -> None:
@@ -200,7 +200,7 @@ class LionelTrainSpeechVolume(NumberEntity):
     _attr_icon = "mdi:account-voice"
     _attr_mode = NumberMode.SLIDER
     _attr_native_min_value = 0
-    _attr_native_max_value = 7
+    _attr_native_max_value = 10
     _attr_native_step = 1
 
     def __init__(self, coordinator: LionelTrainCoordinator, name: str) -> None:
@@ -238,7 +238,7 @@ class LionelTrainEngineVolume(NumberEntity):
     _attr_icon = "mdi:train"
     _attr_mode = NumberMode.SLIDER
     _attr_native_min_value = 0
-    _attr_native_max_value = 7
+    _attr_native_max_value = 10
     _attr_native_step = 1
 
     def __init__(self, coordinator: LionelTrainCoordinator, name: str) -> None:
