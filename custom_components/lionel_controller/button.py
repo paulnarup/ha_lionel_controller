@@ -163,7 +163,7 @@ class LionelTrainHornButton(LionelTrainButtonBase):
         """Press the button: sound horn briefly (1s)."""
         try:
             await self._coordinator.async_set_horn(True)
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(1.0)
         finally:
             # Ensure horn is turned off even if sleep is interrupted
             await self._coordinator.async_set_horn(False)
@@ -184,6 +184,6 @@ class LionelTrainBellButton(LionelTrainButtonBase):
         """Press the button: ring bell briefly (1s)."""
         try:
             await self._coordinator.async_set_bell(True)
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(1.0)
         finally:
             await self._coordinator.async_set_bell(False)
